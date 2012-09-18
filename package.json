@@ -6,11 +6,15 @@
   "scripts": {
     "test": "make test"
   },
-  "repository": "",
+  "repository": "git://github.com/fengmk2/pedding.git",
   "keywords": [
     "pedding",
     "callback"
   ],
+  "devDependencies": {
+    "mocha": "*",
+    "should": "*"
+  },
   "author": "fengmk2 <fengmk2@gmail.com>",
   "license": "MIT"
 }

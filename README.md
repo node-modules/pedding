@@ -1,6 +1,6 @@
 # pedding
 
-Useful tools for unit test.
+Useful tools for unit test: Just pedding for callback.
 
 ## Install
 

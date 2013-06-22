@@ -2,6 +2,12 @@
 
 Useful tools for unit test.
 
+## Install
+
+```bash
+$ npm install pedding
+```
+
 ## Usage
 
 ```js
@@ -22,7 +28,7 @@ it('should request two resources', function (done) {
 
 (The MIT License)
 
-Copyright (c) 2011-2012 fengmk2 &lt;fengmk2@gmail.com&gt;
+Copyright (c) 2011-2013 fengmk2 &lt;fengmk2@gmail.com&gt;
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
@@ -42,5 +48,3 @@ IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
 CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
 TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
 SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
-

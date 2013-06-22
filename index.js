@@ -1,5 +1,6 @@
 module.exports = function (n, fn) {
   var called = false;
+  var times = 0;
   return function (err) {
     if (called) {
       return;
@@ -8,6 +9,11 @@ module.exports = function (n, fn) {
       called = true;
       return fn(err);
     }
-    --n || fn();
+    times++;
+    if (times === n) {
+      fn();
+    } else if (times > n) {
+      throw new Error('Expect to call ' + n + ' times, but got ' + times);
+    }
   };
 };

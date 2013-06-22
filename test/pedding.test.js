@@ -1,11 +1,16 @@
 var pedding = require('../');
 var should = require('should');
 
-describe('pedding.js', function () {
+describe('pedding.test.js', function () {
   it('should called once', function (done) {
-    done = pedding(1, done);
-    done();
-    done();
+    var fn = pedding(1, function () {});
+    fn();
+    (function () {
+      fn();
+    }).should.throw('Expect to call 1 times, but got 2');
+    (function () {
+      fn();
+    }).should.throw('Expect to call 1 times, but got 3');
     done();
   });
 

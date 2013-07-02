@@ -1,7 +1,7 @@
 {
   "name": "pedding",
   "repo": "fengmk2/pedding",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Just pedding for callback.",
   "development": {
     "chaijs/chai": "*"

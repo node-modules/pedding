@@ -1,5 +1,22 @@
-var pedding = require('../');
-var should = require('should');
+/*!
+ * pedding - test/pedding.test.js
+ * Copyright(c) 2013 fengmk2 <fengmk2@gmail.com>
+ * MIT Licensed
+ */
+
+"use strict";
+
+/**
+ * Module dependencies.
+ */
+
+try {
+  var pedding = require('../');
+} catch (e) {
+  var pedding = require('pedding');
+}
+
+var should = require('chai').should();
 
 describe('pedding.test.js', function () {
   it('should called once', function (done) {

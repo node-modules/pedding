@@ -1,4 +1,12 @@
-module.exports = function (n, fn) {
+/*!
+ * pedding - index.js
+ * Copyright(c) 2013 fengmk2 <fengmk2@gmail.com>
+ * MIT Licensed
+ */
+
+module.exports = pedding;
+
+function pedding(n, fn) {
   var called = false;
   var times = 0;
   return function (err) {
@@ -16,4 +24,4 @@ module.exports = function (n, fn) {
       throw new Error('Expect to call ' + n + ' times, but got ' + times);
     }
   };
-};
+}

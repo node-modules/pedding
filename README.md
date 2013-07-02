@@ -1,4 +1,4 @@
-# pedding
+# pedding [![Build Status](https://secure.travis-ci.org/fengmk2/pedding.png)](http://travis-ci.org/fengmk2/pedding)
 
 Useful tools for unit test: Just pedding for callback.
 

@@ -17,6 +17,8 @@ test:
 		--reporter $(REPORTER) --timeout $(TIMEOUT) --bail $(MOCHA_OPTS) $(TESTS)
 
 test-component:
-	@mocha-phantomjs test/index.html
+	@node_modules/mocha-phantomjs/bin/mocha-phantomjs test/index.html
 
-.PHONY: build components clean test test-component
+test-all: test test-component
+
+.PHONY: test

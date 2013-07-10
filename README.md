@@ -2,10 +2,18 @@
 
 Useful tools for unit test: Just pedding for callback.
 
-## Install
+## Installation
+
+### Node.js
 
 ```bash
 $ npm install pedding
+```
+
+### [Component](https://github.com/component/component)
+
+```bash
+$ component install fengmk2/pedding
 ```
 
 ## Usage

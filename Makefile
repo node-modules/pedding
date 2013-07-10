@@ -2,12 +2,13 @@ TESTS = test/*.test.js
 TIMEOUT = 1000
 MOCHA_OPTS =
 REPORTER = spec
+COMPONENT = node_modules/component/bin/component
 
 build: components index.js
-	@component build --dev
+	@$(COMPONENT) build --dev
 
 components: component.json
-	@component install --dev
+	@$(COMPONENT) install --dev
 
 clean:
 	@rm -rf build components
@@ -21,4 +22,4 @@ test-component:
 
 test-all: test test-component
 
-.PHONY: test
+.PHONY: test clean

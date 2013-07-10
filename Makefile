@@ -12,7 +12,7 @@ components: component.json
 clean:
 	@rm -rf build components
 
-test:
+test: build
 	@NODE_ENV=test node_modules/mocha/bin/mocha \
 		--reporter $(REPORTER) --timeout $(TIMEOUT) --bail $(MOCHA_OPTS) $(TESTS)
 

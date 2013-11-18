@@ -1,5 +1,7 @@
 # pedding [![Build Status](https://secure.travis-ci.org/fengmk2/pedding.png)](http://travis-ci.org/fengmk2/pedding)
 
+[![NPM](https://nodei.co/npm/pedding.png?downloads=true&stars=true)](https://nodei.co/npm/pedding/)
+
 Useful tools for unit test: Just pedding for callback.
 
 ## Installation

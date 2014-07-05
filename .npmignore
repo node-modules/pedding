@@ -5,3 +5,4 @@ Makefile
 logo.png
 build
 components
+.jshint*

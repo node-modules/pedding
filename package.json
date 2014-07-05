@@ -12,6 +12,7 @@
     "callback"
   ],
   "devDependencies": {
+    "contributors": "*",
     "mocha": "*",
     "mocha-phantomjs": "*",
     "component": "*",

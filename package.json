@@ -1,6 +1,6 @@
 {
   "name": "pedding",
-  "version": "0.0.3",
+  "version": "1.0.0",
   "description": "Just pedding for callback.",
   "main": "index.js",
   "scripts": {

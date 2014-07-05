@@ -7,6 +7,12 @@
 module.exports = pedding;
 
 function pedding(n, fn) {
+  if (typeof n === 'function') {
+    var tmp = n;
+    n = fn;
+    fn = tmp;
+  }
+
   var called = false;
   var times = 0;
   return function (err) {

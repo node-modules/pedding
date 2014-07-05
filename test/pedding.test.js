@@ -38,6 +38,13 @@ describe('pedding.test.js', function () {
     }
   });
 
+  it('should called pedding(done, 100) then done()', function (done) {
+    done = pedding(done, 100);
+    for (var i = 0; i < 100; i++) {
+      done();
+    }
+  });
+
   it('should called once when meet error', function () {
     var count = 0;
     var cb = function (err) {

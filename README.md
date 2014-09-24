@@ -1,6 +1,27 @@
-# pedding [![Build Status](https://secure.travis-ci.org/fengmk2/pedding.png)](http://travis-ci.org/fengmk2/pedding)
+# pedding
 
-[![NPM](https://nodei.co/npm/pedding.png?downloads=true&stars=true)](https://nodei.co/npm/pedding/)
+[![NPM version][npm-image]][npm-url]
+[![build status][travis-image]][travis-url]
+[![Test coverage][coveralls-image]][coveralls-url]
+[![Gittip][gittip-image]][gittip-url]
+[![David deps][david-image]][david-url]
+[![node version][node-image]][node-url]
+[![npm download][download-image]][download-url]
+
+[npm-image]: https://img.shields.io/npm/v/pedding.svg?style=flat-square
+[npm-url]: https://npmjs.org/package/pedding
+[travis-image]: https://img.shields.io/travis/node-modules/pedding.svg?style=flat-square
+[travis-url]: https://travis-ci.org/node-modules/pedding
+[coveralls-image]: https://img.shields.io/coveralls/node-modules/pedding.svg?style=flat-square
+[coveralls-url]: https://coveralls.io/r/node-modules/pedding?branch=master
+[gittip-image]: https://img.shields.io/gittip/fengmk2.svg?style=flat-square
+[gittip-url]: https://www.gittip.com/fengmk2/
+[david-image]: https://img.shields.io/david/node-modules/pedding.svg?style=flat-square
+[david-url]: https://david-dm.org/node-modules/pedding
+[node-image]: https://img.shields.io/badge/node.js-%3E=_0.10-green.svg?style=flat-square
+[node-url]: http://nodejs.org/download/
+[download-image]: https://img.shields.io/npm/dm/pedding.svg?style=flat-square
+[download-url]: https://npmjs.org/package/pedding
 
 Useful tools for unit test: Just pedding for callback.
 
@@ -15,7 +36,7 @@ $ npm install pedding
 ### [Component](https://github.com/component/component)
 
 ```bash
-$ component install fengmk2/pedding
+$ component install node-modules/pedding
 ```
 
 ## Usage

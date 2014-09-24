@@ -6,3 +6,4 @@ logo.png
 build
 components
 .jshint*
+coverage

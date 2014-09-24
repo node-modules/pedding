@@ -1,6 +1,6 @@
 {
   "name": "pedding",
-  "repo": "fengmk2/pedding",
+  "repo": "node-modules/pedding",
   "version": "1.0.0",
   "description": "Just pedding for callback.",
   "development": {

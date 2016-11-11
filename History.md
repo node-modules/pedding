@@ -1,4 +1,12 @@
 
+1.1.0 / 2016-11-11
+==================
+
+  * feat: add call stack to error object (#5)
+  * use npm scripts
+  * add authors
+  * remove 0.8
+
 1.0.0 / 2014-07-05
 ==================
 

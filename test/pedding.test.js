@@ -58,4 +58,18 @@ describe('pedding.test.js', function () {
     cb(new Error('mock error'));
     count.should.equal(1);
   });
+
+  it('should contain stack from caller', function(done) {
+    var cb = pedding(1, function() {});
+    cb();
+    setTimeout(function() {
+      try {
+        cb();
+        throw new Error('should not run');
+      } catch (e) {
+        e.stack.should.match(/\nCallStack\n    at pedding/);
+        done();
+      }
+    }, 0);
+  })
 });

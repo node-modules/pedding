@@ -25,6 +25,8 @@ function pedding(n, fn) {
 
   var called = false;
   var times = 0;
+  var callStack = new Error();
+  callStack.name = 'CallStack';
   return function (err) {
     if (called) {
       return;
@@ -37,7 +39,9 @@ function pedding(n, fn) {
     if (times === n) {
       fn();
     } else if (times > n) {
-      throw new Error('Expect to call ' + n + ' times, but got ' + times);
+      var err = new Error('Expect to call ' + n + ' times, but got ' + times);
+      err.stack += '\n' + callStack.stack;
+      throw err;
     }
   };
 }

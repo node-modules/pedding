@@ -21,6 +21,7 @@
     "chai": "*",
     "component": "*",
     "contributors": "*",
+    "istanbul": "^0.4.5",
     "mocha": "*",
     "mocha-phantomjs": "*"
   },

@@ -1,30 +1,63 @@
 {
   "name": "pedding",
   "version": "1.1.0",
-  "description": "Just pedding for callback.",
-  "main": "index.js",
-  "scripts": {
-    "test": "mocha --check-leaks -R spec -t 5000 test/*.test.js",
-    "test-cov": "istanbul cover node_modules/.bin/_mocha -- --check-leaks -t 5000 test/*.test.js",
-    "test-travis": "istanbul cover node_modules/.bin/_mocha --report lcovonly -- --check-leaks -t 5000 test/*.test.js",
-    "test-component": "mocha-phantomjs test/index.html",
-    "jshint": "jshint .",
-    "cnpm": "npm install --registry=https://registry.npm.taobao.org",
-    "contributors": "contributors -f plain -o AUTHORS"
-  },
+  "description": "Just pending for callback.",
   "repository": "git://github.com/node-modules/pedding.git",
   "keywords": [
     "pedding",
+    "pending",
     "callback"
   ],
-  "devDependencies": {
-    "chai": "*",
-    "component": "*",
-    "contributors": "*",
-    "istanbul": "^0.4.5",
-    "mocha": "*",
-    "mocha-phantomjs": "*"
-  },
   "author": "fengmk2 <fengmk2@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "engines": {
+    "node": ">= 18.19.0"
+  },
+  "devDependencies": {
+    "@arethetypeswrong/cli": "^0.17.1",
+    "@eggjs/tsconfig": "1",
+    "@types/node": "22",
+    "@types/mocha": "10",
+    "egg-bin": "6",
+    "eslint": "8",
+    "eslint-config-egg": "14",
+    "tshy": "3",
+    "tshy-after": "1",
+    "typescript": "5"
+  },
+  "scripts": {
+    "lint": "eslint --cache src test --ext .ts",
+    "pretest": "npm run lint -- --fix && npm run prepublishOnly",
+    "test": "egg-bin test",
+    "preci": "npm run lint && npm run prepublishOnly && attw --pack",
+    "ci": "egg-bin cov",
+    "prepublishOnly": "tshy && tshy-after"
+  },
+  "type": "module",
+  "tshy": {
+    "exports": {
+      ".": "./src/index.ts",
+      "./package.json": "./package.json"
+    }
+  },
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/esm/index.d.ts",
+        "default": "./dist/esm/index.js"
+      },
+      "require": {
+        "types": "./dist/commonjs/index.d.ts",
+        "default": "./dist/commonjs/index.js"
+      }
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "types": "./dist/commonjs/index.d.ts",
+  "main": "./dist/commonjs/index.js",
+  "module": "./dist/esm/index.js"
 }

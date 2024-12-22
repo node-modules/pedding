@@ -1,55 +1,58 @@
 # pedding
 
 [![NPM version][npm-image]][npm-url]
-[![build status][travis-image]][travis-url]
-[![Test coverage][coveralls-image]][coveralls-url]
-[![Gittip][gittip-image]][gittip-url]
-[![David deps][david-image]][david-url]
-[![node version][node-image]][node-url]
+[![Node.js CI](https://github.com/node-modules/pedding/actions/workflows/nodejs.yml/badge.svg)](https://github.com/node-modules/pedding/actions/workflows/nodejs.yml)
+[![Test coverage][codecov-image]][codecov-url]
 [![npm download][download-image]][download-url]
+[![Node.js Version](https://img.shields.io/node/v/pedding.svg?style=flat)](https://nodejs.org/en/download/)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://makeapullrequest.com)
 
 [npm-image]: https://img.shields.io/npm/v/pedding.svg?style=flat-square
 [npm-url]: https://npmjs.org/package/pedding
-[travis-image]: https://img.shields.io/travis/node-modules/pedding.svg?style=flat-square
-[travis-url]: https://travis-ci.org/node-modules/pedding
-[coveralls-image]: https://img.shields.io/coveralls/node-modules/pedding.svg?style=flat-square
-[coveralls-url]: https://coveralls.io/r/node-modules/pedding?branch=master
-[gittip-image]: https://img.shields.io/gittip/fengmk2.svg?style=flat-square
-[gittip-url]: https://www.gittip.com/fengmk2/
-[david-image]: https://img.shields.io/david/node-modules/pedding.svg?style=flat-square
-[david-url]: https://david-dm.org/node-modules/pedding
-[node-image]: https://img.shields.io/badge/node.js-%3E=_0.10-green.svg?style=flat-square
-[node-url]: http://nodejs.org/download/
+[codecov-image]: https://codecov.io/github/node-modules/pedding/coverage.svg?branch=master
+[codecov-url]: https://codecov.io/github/node-modules/pedding?branch=master
 [download-image]: https://img.shields.io/npm/dm/pedding.svg?style=flat-square
 [download-url]: https://npmjs.org/package/pedding
 
-Useful tools for unit test: Just pedding for callback.
+Useful tools for unit test: Just pending for callback.
 
 ## Installation
 
 ### Node.js
 
 ```bash
-$ npm install pedding
-```
-
-### [Component](https://github.com/component/component)
-
-```bash
-$ component install node-modules/pedding
+npm install pedding
 ```
 
 ## Usage
 
-```js
-var pedding = require('pedding');
+CommonJS
 
-it('should request two resources', function (done) {
-  done = pedding(2, done);
-  http.get('http://fengmk2.github.com', function (res) {
+```js
+const { pending } = require('pedding');
+
+it('should request two resources', done => {
+  done = pending(2, done);
+  http.get('http://fengmk2.github.com', res => {
     done();
   });
-  http.get('http://www.taobao.com', function (res) {
+  http.get('http://www.taobao.com', res => {
+    done();
+  });
+});
+```
+
+ESM and TypeScript
+
+```ts
+import { pending } from 'pedding';
+
+it('should request two resources', done => {
+  done = pending(2, done);
+  http.get('http://fengmk2.github.com', res => {
+    done();
+  });
+  http.get('http://www.taobao.com', res => {
     done();
   });
 });
@@ -57,25 +60,10 @@ it('should request two resources', function (done) {
 
 ## License
 
-(The MIT License)
+[MIT](LICENSE)
 
-Copyright (c) 2011-2014 fengmk2 &lt;fengmk2@gmail.com&gt;
+## Contributors
 
-Permission is hereby granted, free of charge, to any person obtaining
-a copy of this software and associated documentation files (the
-'Software'), to deal in the Software without restriction, including
-without limitation the rights to use, copy, modify, merge, publish,
-distribute, sublicense, and/or sell copies of the Software, and to
-permit persons to whom the Software is furnished to do so, subject to
-the following conditions:
+[![Contributors](https://contrib.rocks/image?repo=node-modules/pedding)](https://github.com/node-modules/pedding/graphs/contributors)
 
-The above copyright notice and this permission notice shall be
-included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND,
-EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
-IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
-CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
-TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
-SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+Made with [contributors-img](https://contrib.rocks).

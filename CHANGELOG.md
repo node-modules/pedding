@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.1](https://github.com/node-modules/pedding/compare/v2.0.0...v2.0.1) (2025-01-01)
+
+
+### Bug Fixes
+
+* support pending(fn: Callback, n: number) ([#7](https://github.com/node-modules/pedding/issues/7)) ([e058f36](https://github.com/node-modules/pedding/commit/e058f3602c425e491a5782e3374e72f78413a173))
+
 ## [2.0.0](https://github.com/node-modules/pedding/compare/v1.1.0...v2.0.0) (2024-12-22)
 
 

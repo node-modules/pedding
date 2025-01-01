@@ -13,13 +13,17 @@ export class ExecuteTooManyTimesError extends Error {
   }
 }
 
-export function pending(n: number, fn: Callback) {
+export function pending(fn: Callback, n: number): (err?: Error) => void;
+export function pending(n: number, fn: Callback): (err?: Error) => void;
+export function pending(n: number | Callback, fn: Callback | number): (err?: Error) => void {
+  let _fn: Callback;
   if (typeof n === 'function') {
     // keep compatibility for old version
     // pending(fn, n)
-    const tmp = n;
-    n = fn as unknown as number;
-    fn = tmp as Callback;
+    _fn = n;
+    n = fn as number;
+  } else {
+    _fn = fn as Callback;
   }
 
   let called = false;
@@ -32,11 +36,11 @@ export function pending(n: number, fn: Callback) {
     }
     if (err) {
       called = true;
-      return fn(err);
+      return _fn(err);
     }
     times++;
     if (times === n) {
-      fn();
+      _fn();
     } else if (times > n) {
       const err = new ExecuteTooManyTimesError(n, times);
       err.stack += '\n' + callStack.stack;

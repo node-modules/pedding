@@ -19,7 +19,7 @@ describe('test/pedding.test.ts', () => {
   });
 
   it('should called pedding(done, 100) then done()', done => {
-    done = pedding(done as any, 100 as any);
+    done = pedding(done, 100);
     for (let i = 0; i < 100; i++) {
       done();
     }
